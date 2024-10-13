@@ -68,7 +68,6 @@ nav a {
 nav a:hover,
 nav a.active {
   color: #FF2E63; 
-  border-bottom: 3px solid #FF2E63; 
 }
 
 /* ================================================================================== SECTION  ========================================================================= */
@@ -599,56 +598,74 @@ form .btn2 {
 
 
 /* ========================= HAMBURGER MENU ============================ */
-/* Responsive styles for the hamburger menu */
+/* Hamburger Menu Responsive Styles for 768px and Below */
 @media (max-width: 768px) {
   .menu-icon {
-    display: block; 
+    display: block;
   }
 
-  /* Style the navigation menu */
   .nav-menu {
-    display: none; 
-    flex-direction: column; 
-    align-items: center; 
-    position: fixed; 
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
     top: 0;
     right: 0;
-    height: 100%; 
+    height: 100%;
     width: 35%;
-    background-color: #222831; 
-    transition: transform 0.3s ease; 
-    transform: translateX(100%); 
-    z-index: 1; 
+    background-color: #222831;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    z-index: 1;
   }
 
   .nav-menu.active {
-    display: flex; 
-    transform: translateX(0); 
+    display: flex;
+    transform: translateX(0);
   }
 
-  /* Adjust the link styles */
   .nav-link {
-    padding: 1rem; 
-    width: 35%; 
-    text-align: center; 
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
     color: white;
-    text-decoration: none; 
-    margin-top: 1rem
+    text-decoration: none;
+    margin-top: 1rem;
   }
 
-  /* Adjust top margin for the first link */
   .nav-link:first-child {
     margin-top: 2rem;
   }
+
+  .menu-icon .fa-bars,
+  .menu-icon .fa-times {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
 }
 
-/* Position toggle icons correctly */
-.menu-icon .fa-bars,
-.menu-icon .fa-times {
-  position: absolute;
-  top: 0; 
-  left: 0; 
+/* Additional Responsive Styles for 480px and Below */
+@media (max-width: 480px) {
+  .nav-menu {
+    width: 60%; 
+    padding: 1rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem; 
+    padding: 0.8rem 0;
+  }
+
+  .menu-icon .fa-bars,
+  .menu-icon .fa-times {
+    font-size: 2rem; 
+  }
 }
+
 
 /* ========================= HAMBURGER MENU ============================ */
 
@@ -792,13 +809,13 @@ form .btn2 {
 
 @media (max-width: 480px) {
   .work-list {
-    grid-template-columns: 1fr; 
-    gap: 20px; 
-    padding-bottom: 30px; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    margin-bottom: 20px; 
   }
 
   .box {
-    min-height: 250px; 
+    min-height: 120px; 
   }
 }
 
